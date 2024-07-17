@@ -19,6 +19,7 @@ const Login = () => {
         const getToken = res.data.data.token;
         console.log(getToken);
         localStorage.setItem("token", getToken);
+        navigate("/home");
       })
       .catch((err) => console.log(err));
   };
@@ -34,7 +35,7 @@ const Login = () => {
     if (token) {
       navigate("/home");
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="mt-[20vh]">
